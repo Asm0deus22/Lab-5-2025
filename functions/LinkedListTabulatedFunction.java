@@ -295,10 +295,10 @@ public class LinkedListTabulatedFunction implements TabulatedFunction {
     }
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof LinkedListTabulatedFunction other)) return false;
-        if (this.points.getSize() != other.points.getSize()) return false;
+        if (!(obj instanceof TabulatedFunction other)) return false;
+        if (this.getPointsCount() != other.getPointsCount()) return false;
         for (int i = 0; i < this.points.getSize(); i++) {
-            if (!this.points.get(i).equals(other.points.get(i))) return false;
+            if (!this.points.get(i).equals(other.getPoint(i))) return false;
         }
         return true;
     }

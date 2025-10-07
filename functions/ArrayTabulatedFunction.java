@@ -155,10 +155,10 @@ public class ArrayTabulatedFunction implements TabulatedFunction {
     }
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof ArrayTabulatedFunction other)) return false;
-        if (this.amountOfPoints != other.amountOfPoints) return false;
+        if (!(obj instanceof TabulatedFunction other)) return false;
+        if (this.getPointsCount() != other.getPointsCount()) return false;
         for (int i = 0; i < this.amountOfPoints; i++) {
-            if (!this.points[i].equals(other.points[i])) return false;
+            if (!this.points[i].equals(other.getPoint(i))) return false;
         }
         return true;
     }
